@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 07, 2021 at 09:06 PM
+-- Generation Time: Jul 07, 2021 at 09:53 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -52,10 +52,10 @@ INSERT INTO `admin` (`Name`, `ID`, `SSN`, `Email`, `Age`, `pass`) VALUES
 
 CREATE TABLE `complaint` (
   `id` int(11) NOT NULL,
-  `Id_Sender` int(11) NOT NULL,
-  `Id_Reciver` int(11) NOT NULL,
-  `Response_Message` int(255) NOT NULL,
-  `Complaint_Message` int(255) NOT NULL
+  `Crew_id` int(11) NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `Response_Message` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `Complaint_Message` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -121,7 +121,7 @@ INSERT INTO `crew` (`Name`, `ID`, `SSN`, `Email`, `Age`, `Date_of_hiring`, `Date
 --
 
 CREATE TABLE `slots` (
-  `Monthe` int(11) NOT NULL,
+  `Monthe` varchar(11) COLLATE utf8mb4_general_ci NOT NULL,
   `slot` int(11) NOT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -134,7 +134,7 @@ CREATE TABLE `slots` (
 
 CREATE TABLE `vocation` (
   `id` int(11) NOT NULL,
-  `id_sender` int(11) NOT NULL,
+  `Crew_id` int(11) NOT NULL,
   `Month_Priority` varchar(150) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -142,7 +142,7 @@ CREATE TABLE `vocation` (
 -- Dumping data for table `vocation`
 --
 
-INSERT INTO `vocation` (`id`, `id_sender`, `Month_Priority`) VALUES
+INSERT INTO `vocation` (`id`, `Crew_id`, `Month_Priority`) VALUES
 (1, 2, 'January,February,March'),
 (2, 2, 'January,May,December,June,April,August,Month,August,February,July,November,October,March,September'),
 (3, 2, 'January,May,December,June,April,August,Month,August,February,July,November,October,March,September,Month,January'),
@@ -163,25 +163,31 @@ ALTER TABLE `admin`
 -- Indexes for table `complaint`
 --
 ALTER TABLE `complaint`
-  ADD UNIQUE KEY `id` (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `FOREIGN_CrewID_comp` (`Crew_id`),
+  ADD KEY `FOREIGN_AdminID_comp` (`admin_id`);
 
 --
 -- Indexes for table `crew`
 --
 ALTER TABLE `crew`
+  ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `ID` (`ID`);
 
 --
 -- Indexes for table `slots`
 --
 ALTER TABLE `slots`
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indexes for table `vocation`
 --
 ALTER TABLE `vocation`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FOREIGN_CrewID` (`Crew_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -192,6 +198,23 @@ ALTER TABLE `vocation`
 --
 ALTER TABLE `vocation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `complaint`
+--
+ALTER TABLE `complaint`
+  ADD CONSTRAINT `FOREIGN_AdminID_comp` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`ID`),
+  ADD CONSTRAINT `FOREIGN_CrewID_comp` FOREIGN KEY (`Crew_id`) REFERENCES `crew` (`ID`);
+
+--
+-- Constraints for table `vocation`
+--
+ALTER TABLE `vocation`
+  ADD CONSTRAINT `FOREIGN_CrewID` FOREIGN KEY (`Crew_id`) REFERENCES `crew` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
