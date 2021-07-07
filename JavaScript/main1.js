@@ -47,7 +47,7 @@ function DeleteSelected() {
       : map.get(this.getAttribute("id"));
 
   map.set(this.getAttribute("id"), index);
-  
+
   SelectedValue.push(this.value);
   SelectionList.forEach((select) => {
     if (this.getAttribute("id") !== select.getAttribute("id")) {
@@ -66,9 +66,9 @@ function DeleteSelected() {
 function SubmitFn(e) {
 
   e.preventDefault();
- 
+
   let noMonth = false;
- 
+
   SelectionList.forEach((select) => {
     let index = select.options.selectedIndex;
     let month = select.options[index].value;
@@ -124,31 +124,31 @@ function addPriority(SelectedValue) {
   var crew = JSON.parse(sessionStorage.getItem('crew'));
   var crewID = crew.ID;
   var priority = SelectedValue.toString();
-  
+
   console.log(crewID);
 
   var xhr = new XMLHttpRequest();
 
   xhr.open("POST", `php/addPriority.inc.php?addPriority= &crewID=${crewID}&priority=${priority}`, true);
- 
+
   //to Work with POST
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = () => {
 
     if (xhr.status == 200) {
-     
+
       let response = xhr.responseText;
       console.log(response);
-      if(response === 'false'){
+      if (response === 'false') {
         ALERT.style.display = "block";
         ALERT.append("Somthing went wrong, Try again later");
-      }else{
+      } else {
         ALERT.style.display = "block";
         ALERT.classList.add("success");
         ALERT.append("Your Priority List has been successfuly sent");
       }
-      
+
     }
   };
 
