@@ -8,7 +8,7 @@ $dbName = "crewleaves";
 
 $conn = mysqli_connect($dbServerName, $dbUsername, $dbPassword, $dbName);
 
-if ($mysqli->connect_errno) {
-  echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+if ($conn->connect_errno) {
+  echo "Failed to connect to MySQL: " . $conn->connect_error;
   exit();
 }
