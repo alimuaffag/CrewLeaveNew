@@ -5,8 +5,11 @@
   font-family: "Ubuntu", "Poppins", sans-serif;
   box-sizing: border-box;
 }
+
 .input1 {
   background-color: #b09255;
+  color: white;
+  font-size: 18px;
 }
 
 .header1 {
@@ -17,7 +20,6 @@
   top: 0%;
   right: 0%;
   left: 0%;
-  
 }
 
 .header2 {
@@ -28,10 +30,9 @@
   top: 0%;
   right: 0%;
   left: 0%;
-  
 }
 
-.i1{
+.i1 {
   font-size: 20px;
 }
 
@@ -88,7 +89,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   box-shadow: 5px 5px 20px 5px #999999;
 }
 
@@ -106,9 +106,7 @@ main h1 {
   color: #b09255;
 }
 
-main input,
-textarea,
-select {
+main input, textarea, select {
   color: black;
   font-size: 16px;
   width: 100%;
@@ -127,15 +125,13 @@ main select {
   width: 30vh;
 }
 
-input,
-select:focus {
+input, select:focus {
   outline: none;
 }
 
 .label1 {
   color: #b09255;
   display: inline-block;
-
   margin-bottom: 5px;
 }
 
@@ -150,7 +146,7 @@ form {
   align-items: center;
 }
 
-form button {
+form button, form a {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #b09255;
@@ -160,6 +156,7 @@ form button {
   border-radius: 5px;
   font-size: 18px;
   color: white;
+  text-decoration: none;
 }
 
 button:active {
@@ -168,7 +165,6 @@ button:active {
 
 footer {
   box-shadow: 0px 10px 10px 7px #272727;
-
   position: relative;
   padding: 16px 8px;
   bottom: 0%;
@@ -202,20 +198,17 @@ main table {
   border-radius: 5px;
   border-spacing: 0;
   border: 1px solid #b09255;
-
 }
 
 main table th {
   border: 0.1px solid #b09255;
   padding: 16px 24px;
   font-weight: bold;
-
 }
 
 tr:nth-child(even) {
   background-color: #e9d6b18f;
 }
-
 
 /* main table tr:hover {
   background-color:#f8f6f08f ;
@@ -260,8 +253,7 @@ main td {
   margin: 0;
 }
 
-.navbar a:hover,
-.dropdown:hover .dropbtn {
+.navbar a:hover, .dropdown:hover .dropbtn {
   background-color: #dbccae;
 }
 
@@ -294,30 +286,31 @@ main td {
 .item1 {
   grid-area: header;
 }
+
 .item2 {
   grid-area: menu;
 }
+
 .item3 {
   grid-area: main;
 }
+
 .item4 {
   grid-area: right;
 }
+
 .item5 {
   grid-area: footer;
 }
 
 .grid-container {
   display: grid;
-  grid-template-areas:
-    "header header header menu menu menu"
-    "main main main right right right"
-    "footer footer footer footer footer footer";
+  grid-template-areas: "header header header menu menu menu" "main main main right right right" "footer footer footer footer footer footer";
   grid-gap: 10px;
   padding: 10px;
 }
 
-.grid-container > div {
+.grid-container>div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
