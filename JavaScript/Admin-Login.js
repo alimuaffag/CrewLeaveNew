@@ -67,8 +67,8 @@ function login(id, Pass) {
 
         
         sessionStorage.setItem("admin", admin);
-
-        window.location.href = `html/Profile.html?id=${id}`;
+        console.log("dlfjhns;n");
+        window.location.href = `html/ProfileAdmin.html?id=${id}`;
       }
 
     }

@@ -74,7 +74,7 @@ function login(id, Pass) {
   };
 
   //set the parameters to send it as JSON
-  var prams = `login="crew"& id=${id}&password=${Pass}`;
+  var prams = `login=crew&id=${id}&password=${Pass}`;
   console.log(prams);
   xhr.send(prams);
 }
