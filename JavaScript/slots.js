@@ -45,7 +45,7 @@ function CreateTable(slotsValue) {
     inputElm.setAttribute("id", Months[i]);
     inputElm.setAttribute("disabled", true);
 
-    inputElm.setAttribute("value", slotsValue[i].slot);
+    inputElm.setAttribute("value", slotsValue[i].max_slot);
 
     td1.append(i + 1 + "- " + Months[i]);
     td2.append(inputElm);

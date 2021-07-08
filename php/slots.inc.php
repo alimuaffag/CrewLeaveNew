@@ -8,14 +8,14 @@ if (isset($_POST['save'])) {
 
     for ($i = 0; $i < count($slots); $i++) {
 
-        $sql = "update slots set slot=$slots[$i] where id=$i;";
+        $sql = "update slots set max_slot=$slots[$i] where id=$i;";
         mysqli_query($conn, $sql);
     }
 
     echo 'true';
 } else if (isset($_GET)) {
 
-    $sql = "SELECT slot FROM slots;";
+    $sql = "SELECT max_slot, slot FROM slots;";
     $result = mysqli_query($conn, $sql);
 
     if ($result->num_rows > 0) {

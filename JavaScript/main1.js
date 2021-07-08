@@ -129,7 +129,7 @@ function addPriority(SelectedValue) {
 
   var xhr = new XMLHttpRequest();
 
-  xhr.open("POST", `php/addPriority.inc.php?addPriority= &crewID=${crewID}&priority=${priority}`, true);
+  xhr.open("POST", `../php/addPriority.inc.php?addPriority= &crewID=${crewID}&priority=${priority}`, true);
 
   //to Work with POST
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
