@@ -2,79 +2,82 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Table arrangement</title>
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table arrangement</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
-  <img class="back-img" src="../image/image-removebg.png" alt="" srcset="" />
+    <img class="back-img" src="../image/image-removebg.png" alt="" srcset="" />
 
-  <header class="header1">
-    <nav class="container">
-      <img src="../image/SaudiaLugo.png" alt="SaudiaLugo" width="200" height="50" />
-      <h1>SAUDI ARABIA AIRLINES</h1>
-      <a href="ProfileAdmin.html">HOME</a>
+    <header class="header1">
+        <nav class="container">
+            <img src="../image/SaudiaLugo.png" alt="SaudiaLugo" width="200" height="50" />
+            <h1>SAUDI ARABIA AIRLINES</h1>
+            <a href="ProfileAdmin.html">HOME</a>
 
-      <a href="Table arrangement.html">Slots</a>
-      <a href="AdminControl.html">Crew List</a>
+            <a href="Table arrangement.html">Slots</a>
+            <a href="AdminControl.html">Crew List</a>
 
-      <div class="dropdown">
-        <button class="dropbtn"><i class="fa fa-user-circle-o" style="font-size:36px"></i>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-user-circle-o" style="font-size:36px"></i>
           <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-          <a href="ProfileAdmin.html"><i class="fa fa-info"
+                <div class="dropdown-content">
+                    <a href="ProfileAdmin.html"><i class="fa fa-info"
               style="font-size: 20px; display: inline; padding-right: 5px"> Profile</i></a>
-          <a href="../index.html"><i class="fa fa-sign-out" style="font-size: 20px"></i> Logout</a>
+                    <a href="../index.html"><i class="fa fa-sign-out" style="font-size: 20px"></i> Logout</a>
 
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="main2">
+        <div class="card-header">
+            Slots
         </div>
-      </div>
+        <div class="alert" id="alert">
+            <span class="closebtn">&times;</span>
+        </div>
 
-    </nav>
-  </header>
+        <form>
 
-  <main class="main2">
+            <table id="Table1">
 
-    <div class="alert" id="alert">
-      <span class="closebtn">&times;</span>
-    </div>
+                <tbody>
 
-    <form>
+                    <tr>
+                        <th>Months</th>
+                        <th>Slots</th>
+                    </tr>
 
-      <table id="Table1">
+                </tbody>
 
-        <tbody>
+            </table>
 
-          <tr>
-            <th>Months</th>
-            <th>Slots</th>
-          </tr>
+            <div class="div1">
+                <button class="input1" type="button" id="edit" value="edit">Edit</button>
+                <button class="input1" type="submit" id="Triger" value="Triger" name="Dis">Trigger</button>
+                <button class="input1" type="submit" id="submit" value="Confirm">Confirm</button>
+            </div>
 
-        </tbody>
+        </form>
 
-      </table>
+    </main>
 
-      <div class="div1">
-        <button class="input1" type="button" id="edit" value="edit">Edit</button>
-        <button class="input1" type="submit" id="submit" value="Confirm">Confirm</button>
-      </div>
+    <footer>
+        <nav class="container">
+            <h3>© SAUDIِِِِA AIRLINES</h3>
+        </nav>
+    </footer>
 
-    </form>
-
-  </main>
-
-  <footer>
-    <nav class="container">
-      <h3>© SAUDIِِِِA AIRLINES</h3>
-    </nav>
-  </footer>
-
-  <script src="../JavaScript/slots.js"></script>
+    <script src="../JavaScript/slots.js"></script>
 </body>
 
 </html>

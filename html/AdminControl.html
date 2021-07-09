@@ -2,67 +2,68 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Table arrangement</title>
-  <link rel="stylesheet" href="../css/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table arrangement</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
-  <img class="back-img" src="../image/image-removebg.png" alt="" srcset="" />
-  <header class="header1">
-    <nav class="container">
-      <img src="../image/SaudiaLugo.png" alt="SaudiaLugo" width="200" height="50" />
-      <h1>SAUDI ARABIA AIRLINES</h1>
-      <a href="ProfileAdmin.html">HOME</a>
+    <img class="back-img" src="../image/image-removebg.png" alt="" srcset="" />
+    <header class="header1">
+        <nav class="container">
+            <img src="../image/SaudiaLugo.png" alt="SaudiaLugo" width="200" height="50" />
+            <h1>SAUDI ARABIA AIRLINES</h1>
+            <a href="ProfileAdmin.html">HOME</a>
+            <a href="TableArrangement.html">Slots</a>
+            <a href="AdminControl.html">Crew List</a>
 
-      <a href="TableArrangement.html">Slots</a>
-      <a href="AdminControl.html">Crew List</a>
-
-      <div class="dropdown">
-        <button class="dropbtn">
+            <div class="dropdown">
+                <button class="dropbtn">
           <i class="fa fa-user-circle-o" style="font-size: 36px"></i>
           <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-          <a href="ProfileAdmin.html"><i class="fa fa-info"
-              style="font-size: 20px; display: inline; padding-right: 5px">Profile</i></a>
-          <a href="../index.html"><i class="fa fa-sign-out" style="font-size: 20px"></i> Logout</a>
+                <div class="dropdown-content">
+                    <a href="ProfileAdmin.html"><i class="fa fa-info"
+                    style="font-size: 20px; display: inline; padding-right: 5px"> Profile</i></a>
+                    <a href="../index.html"><i class="fa fa-sign-out"     style="font-size: 20px; display: inline; padding-right: 5px"></i> Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main1">
+        <div class="card-header">
+            Crew List
         </div>
-      </div>
-    </nav>
-  </header>
+        <table id="Table1">
+            <tbody>
 
-  <main class="main1">
+                <tr>
+                    <th>Name</th>
+                    <th>ID</th>
+                    <th>Age</th>
+                    <th>Date f hiring</th>
+                    <th>Date of Vocation</th>
+                    <th>Remaning Day's</th>
+                    <th>Complaint</th>
+                </tr>
 
-    <table id="Table1">
-      <tbody>
+            </tbody>
 
-        <tr>
-          <th>Name</th>
-          <th>ID</th>
-          <th>Age</th>
-          <th>Date f hiring</th>
-          <th>Date of Vocation</th>
-          <th>Remaning Day's</th>
-          <th>Complaint</th>
-        </tr>
+        </table>
 
-      </tbody>
+    </main>
 
-    </table>
+    <footer>
+        <nav class="container">
+            <h3>© SAUDIِِِِA AIRLINES</h3>
+        </nav>
+    </footer>
 
-  </main>
-
-  <footer>
-    <nav class="container">
-      <h3>© SAUDIِِِِA AIRLINES</h3>
-    </nav>
-  </footer>
-
-  <script src="../JavaScript/adminControl.js"></script>
+    <script src="../JavaScript/adminControl.js"></script>
 </body>
 
 </html>

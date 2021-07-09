@@ -1,6 +1,7 @@
 var Table1 = document.getElementsByTagName("tbody");
 var submit = document.getElementById("submit");
 var edit = document.getElementById("edit");
+var trigger = document.getElementById("Triger");
 
 var Months = new Array(
   "January",
@@ -29,6 +30,8 @@ getSlotsValue();
 
 submit.addEventListener("click", CheckInputs);
 edit.addEventListener("click", editBtn);
+trigger.addEventListener("click",triggerValues);
+
 
 function CreateTable(slotsValue) {
   console.log(slotsValue);
@@ -133,6 +136,47 @@ function saveValues(values) {
     if (xhr.status == 200) {
 
       let res = xhr.responseText;
+      console.log("sSSSS");
+      console.log(res);
+      if (res === 'Somthing Went Wrong') {
+
+        ALERT.style.display = "block";
+        ALERT.append(res);
+
+      }else if (res == "Shady"){
+        ALERT.style.display = "block";
+        ALERT.classList.add("success");
+        ALERT.append("all EMMMMPLOYES are set successfully");
+      }
+      else {
+
+        ALERT.style.display = "block";
+        ALERT.classList.add("success");
+        ALERT.append("all months are set successfully");
+
+      }
+    }
+  };
+
+  var prams = `save= &slots=${values}`;
+  console.log(prams);
+  xhr.send(prams);
+
+}
+function triggerValues(values) {
+
+  var xhr = new XMLHttpRequest();
+
+  xhr.open("POST", `../php/slots.inc.php`, true);
+
+  //to Work with POST
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  xhr.onload = () => {
+
+    if (xhr.status == 200) {
+
+      let res = xhr.responseText;
       if (res === 'Somthing Went Wrong') {
 
         ALERT.style.display = "block";
@@ -149,7 +193,7 @@ function saveValues(values) {
     }
   };
 
-  var prams = `save= &slots=${values}`;
+  var prams = `dis= &slots=${values}`;
   console.log(prams);
   xhr.send(prams);
 
